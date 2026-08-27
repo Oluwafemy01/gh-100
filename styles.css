@@ -1,0 +1,106 @@
+:root{
+  --brand:#c8102e; /* First Bank inspired red */
+  --accent:#111827;
+  --muted:#6b7280;
+  --bg:#ffffff;
+  --surface:#f9fafb;
+  --radius:10px;
+  --container-width:1100px;
+  --gap:1.25rem;
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  color-scheme: light;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--accent);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  line-height:1.45;
+  font-size:16px;
+}
+
+.container{
+  max-width:var(--container-width);
+  margin:0 auto;
+  padding:1.5rem;
+}
+
+/* Header */
+.site-header{
+  border-bottom:1px solid #eee;
+  background:linear-gradient(90deg, rgba(255,255,255,0.95), rgba(255,255,255,0.9));
+  position:sticky;
+  top:0;
+  z-index:40;
+}
+.header-inner{
+  display:flex;
+  gap:var(--gap);
+  align-items:center;
+  justify-content:space-between;
+}
+.brand{display:flex;gap:.75rem;align-items:center;text-decoration:none;color:var(--accent)}
+.brand-text{font-weight:700}
+.nav{display:flex;gap:1rem;align-items:center}
+.nav a{text-decoration:none;color:var(--muted)}
+.nav .cta{background:var(--brand);color:#fff;padding:.5rem .9rem;border-radius:8px}
+.nav-toggle{display:none;background:none;border:0;font-size:1.25rem}
+
+/* Hero */
+.hero{padding:3rem 0}
+.hero-grid{display:grid;grid-template-columns:1fr 380px;gap:2rem;align-items:center}
+.hero-content h1{font-size:2rem;margin:.2rem 0 0.5rem}
+.hero-actions{display:flex;gap:.75rem;margin-top:1rem}
+.btn{display:inline-block;padding:.6rem .9rem;border-radius:8px;text-decoration:none;cursor:pointer;border:1px solid transparent}
+.btn.primary{background:var(--brand);color:#fff}
+.btn.outline{background:transparent;border-color:#ddd;color:var(--accent)}
+.btn.store{background:#111;color:#fff;padding:.5rem 1rem}
+
+/* Phone mock */
+.phone-mock{width:240px;height:420px;background:linear-gradient(180deg,#fff,#fff);border-radius:28px;padding:18px;box-shadow:0 10px 30px rgba(0,0,0,.08)}
+.phone-screen{background:linear-gradient(180deg,#f8fafc,#fff);height:100%;border-radius:16px;padding:1rem;display:flex;flex-direction:column;gap:.6rem}
+.phone-screen h3{margin:0;color:var(--brand)}
+.phone-screen ul{margin:0;padding:0 0 0 1rem}
+
+/* Features */
+.features{padding:2.25rem 0}
+.feature-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:1rem}
+.feature{background:var(--surface);padding:1rem;border-radius:12px}
+
+/* Branches */
+.branches{padding:2rem 0}
+.branch-controls{display:flex;gap:.75rem;align-items:center;margin:1rem 0}
+.branch-controls input[type="search"], .branch-controls select{flex:1;padding:.6rem;border-radius:8px;border:1px solid #e5e7eb}
+.branch-layout{display:grid;grid-template-columns:1fr 320px;gap:1rem;align-items:start}
+.branch-list{display:flex;flex-direction:column;gap:.75rem}
+.branch-card{background:#fff;padding:.9rem;border-radius:8px;border:1px solid #eee;cursor:pointer}
+.branch-card h4{margin:.1rem 0}
+.branch-details{background:#fff;border-radius:8px;padding:1rem;border:1px solid #eee;min-height:160px}
+.branch-details p.empty{color:var(--muted)}
+
+/* Map placeholder */
+.map-placeholder{margin-top:1rem;border-radius:8px;overflow:hidden;border:1px dashed #eee}
+
+/* Download */
+.download{padding:2.25rem 0}
+.download-grid{display:grid;grid-template-columns:1fr 300px;gap:1rem;align-items:center}
+
+/* Footer */
+.site-footer{border-top:1px solid #eee;padding:1.5rem 0;margin-top:2rem}
+.footer-grid{display:flex;justify-content:space-between;align-items:center}
+
+/* Responsive */
+@media (max-width:900px){
+  .hero-grid{grid-template-columns:1fr}
+  .feature-grid{grid-template-columns:1fr}
+  .branch-layout{grid-template-columns:1fr}
+  .nav a{display:none}
+  .nav-toggle{display:block}
+}
+
+/* Utility */
+.text-muted{color:var(--muted);font-size:.95rem}
