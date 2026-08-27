@@ -84,7 +84,7 @@ document.addEventListener("DOMContentLoaded", () => {
       <p><strong>City:</strong> ${escapeHtml(b.city)}</p>
       <p><strong>Hours:</strong> ${escapeHtml(b.hours)}</p>
       <p><strong>Phone:</strong> <a href="tel:${encodeURIComponent(b.phone)}">${escapeHtml(b.phone)}</a></p>
-      <div style="margin-top:.75rem;">
+      <div class="branch-actions">
         <button class="btn primary" onclick="getDirections(${b.coords.lat}, ${b.coords.lng})">Get Directions</button>
         <button class="btn outline" onclick="contactBranch('${escapeHtml(b.id)}')">Contact Branch</button>
       </div>
@@ -128,7 +128,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const expanded = navToggle.getAttribute("aria-expanded") === "true";
     navToggle.setAttribute("aria-expanded", String(!expanded));
     // show/hide nav anchors when toggled (simple approach)
-    mainNav.querySelectorAll("a").forEach(a => a.style.display = expanded ? "none" : "inline-block");
+    mainNav.classList.toggle("is-open", !expanded);
   });
 });
 
